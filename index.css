@@ -6,15 +6,16 @@ body {
   }
 
   header {
-    background-color: #4CAF50;
+    background-color: #30336e;
     color: white;
     padding: 10px 0;
     text-align: center;
   }
 
   nav {
-    background-color: #333;
+    background-color: #46459b;
     overflow: hidden;
+    text-align: center;
   }
 
   nav a {
@@ -36,11 +37,22 @@ body {
   }
 
   footer {
-    background-color: #333;
+    background-color: black;
     color: white;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+  }
+
+  img{
+    width: 100%; 
+    max-width: 1000px; 
+    display: block; 
+    margin: auto;
+  }
+
+  .mapa{
+    margin-bottom: 20px;
   }
