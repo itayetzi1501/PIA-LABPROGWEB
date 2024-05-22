@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catálogo de Productos</h1>
+    
+    <form id="productForm">
+        <input type="hidden" name="id" id="id">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required><br>
+        
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" id="descripcion"></textarea><br>
+        
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" id="categoria" required>
+            <!-- Las opciones se agregarán dinámicamente -->
+        </select>
+        <input type="text" name="nueva_categoria" id="nueva_categoria" placeholder="Nueva categoría">
+        <button type="button" onclick="addCategoria()">Agregar Categoría</button><br>
+        
+        <label for="precio">Precio:</label>
+        <input type="number" step="0.01" name="precio" id="precio" required><br>
+        
+        <button type="submit">Guardar</button>
+    </form>
+    
+    <h2>Lista de Productos</h2>
+    <table id="productTable">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+        <!-- Las filas de productos se agregarán dinámicamente -->
+    </table>
+
+    <script>
+        let productos = [];
+        let categorias = ["Medicamentos", "Cuidado de la piel", "Higiene personal"];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCategorias();
+            loadProductos();
+            document.getElementById('productForm').addEventListener('submit', saveProduct);
+        });
+
+        function loadCategorias() {
+            const categoriaSelect = document.getElementById('categoria');
+            categoriaSelect.innerHTML = '';
+            categorias.forEach((cat, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = cat;
+                categoriaSelect.appendChild(option);
+            });
+        }
+
+        function addCategoria() {
+            const nuevaCategoriaInput = document.getElementById('nueva_categoria');
+            const nuevaCategoria = nuevaCategoriaInput.value.trim();
+            if (nuevaCategoria) {
+                categorias.push(nuevaCategoria);
+                loadCategorias();
+                nuevaCategoriaInput.value = '';
+            }
+        }
+
+        function loadProductos() {
+            const productTable = document.getElementById('productTable');
+            const rows = productTable.querySelectorAll('tr:not(:first-child)');
+            rows.forEach(row => row.remove());
+
+            productos.forEach((producto, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${producto.nombre}</td>
+                    <td>${producto.descripcion}</td>
+                    <td>${categorias[producto.categoria]}</td>
+                    <td>${producto.precio.toFixed(2)}</td>
+                    <td>
+                        <button onclick="editProduct(${index})">Editar</button>
+                        <button onclick="deleteProduct(${index})">Eliminar</button>
+                    </td>
+                `;
+                productTable.appendChild(row);
+            });
+        }
+
+        function saveProduct(event) {
+            event.preventDefault();
+            const id = document.getElementById('id').value;
+            const nombre = document.getElementById('nombre').value;
+            const descripcion = document.getElementById('descripcion').value;
+            const categoria = document.getElementById('categoria').value;
+            const precio = parseFloat(document.getElementById('precio').value);
+
+            const producto = { nombre, descripcion, categoria, precio };
+
+            if (id) {
+                productos[id] = producto;
+            } else {
+                productos.push(producto);
+            }
+
+            document.getElementById('productForm').reset();
+            loadProductos();
+        }
+
+        function editProduct(index) {
+            const producto = productos[index];
+            document.getElementById('id').value = index;
+            document.getElementById('nombre').value = producto.nombre;
+            document.getElementById('descripcion').value = producto.descripcion;
+            document.getElementById('categoria').value = producto.categoria;
+            document.getElementById('precio').value = producto.precio;
+        }
+
+        function deleteProduct(index) {
+            productos.splice(index, 1);
+            loadProductos();
+        }
+    </script>
+</body>
+</html>

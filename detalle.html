@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <!-- Enlace al CSS de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-detail {
+            margin-top: 50px;
+        }
+        .product-image {
+            background-color: #ccc;
+            width: 100%;
+            padding-top: 100%; /* Mantiene el cuadrado proporcional */
+            position: relative;
+        }
+        .product-image .placeholder-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <a class="navbar-brand text-white" href="#">
+            Farmax
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="carrito.html">
+                        <i class="fas fa-shopping-cart"></i> Carrito
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="productos.html">
+                        <i class="fas fa-th-list"></i> Productos
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container product-detail d-flex justify-content-center">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-image">
+                    <div class="placeholder-text">Imagen</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Nombre del Producto</h2>
+                <p>Descripción detallada del producto. Todas las características y beneficios del producto, incluyendo materiales, tamaño, uso recomendado, y cualquier otra información relevante.</p>
+                <h4>Precio: $XX.XX</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity" value="1" min="1">
+                    </div>
+                    <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#paymentModal">Agregar al Carrito</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
