@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <!-- Enlace al CSS de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .catalog-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .catalog-item .placeholder {
+            background-color: #ccc;
+            width: 100%;
+            padding-top: 100%;
+            position: relative;
+        }
+        .catalog-item .placeholder-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+            font-size: 1.5rem;
+        }
+        .catalog-item h5 {
+            margin-top: 10px;
+        }
+        .category-item {
+            background-color: #17a2b8;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .category-photo {
+            background-color: #ccc;
+            color: #666;
+            padding: 10px;
+            text-align: center;
+            border-radius: 50px;
+            width: 50%;
+            height: 150px;
+            position: relative;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .category-photo .photo-text {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <a class="navbar-brand text-white" href="#">
+            Farmax
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="carrito.html">
+                        <i class="fas fa-shopping-cart"></i> Carrito
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#productos.html">
+                        <i class="fas fa-th-list"></i> Productos
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+     <!-- Categorías -->
+     <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-8 col-md-3">
+                <div class="category-item">
+                    <div class="category-photo">
+                        <div class="photo-text">Foto</div>
+                    </div>
+                    Medicamentos
+                </div>
+            </div>
+            <div class="col-8 col-md-3">
+                <div class="category-item">
+                    <div class="category-photo">
+                        <div class="photo-text">Foto</div>
+                    </div>
+                    Cuidado de Piel
+                </div>
+            </div>
+            <div class="col-8 col-md-3">
+                <div class="category-item">
+                    <div class="category-photo">
+                        <div class="photo-text">Foto</div>
+                    </div>
+                    Maquillaje
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="catalog-item">
+                    <div class="placeholder">
+                        <div class="placeholder-text">Imagen</div>
+                    </div>
+                    <h5>Nombre del Producto</h5>
+                    <p>Descripción breve del producto</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
