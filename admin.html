@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - FARMAX</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <?php include 'navbar.php'; ?>
+    <div class="container mt-4">
+        <h2>Panel de Administración</h2>
+        <ul class="nav nav-tabs" id="adminTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="productos-tab" data-bs-toggle="tab" data-bs-target="#productos" type="button" role="tab" aria-controls="productos" aria-selected="true">Productos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reportes-tab" data-bs-toggle="tab" data-bs-target="#reportes" type="button" role="tab" aria-controls="reportes" aria-selected="false">Reportes de Ventas</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="adminTabContent">
+            <div class="tab-pane fade show active" id="productos" role="tabpanel" aria-labelledby="productos-tab">
+                <!-- Sección de gestión de productos -->
+                <!-- Aquí agregar el código para listar, agregar, editar y eliminar productos -->
+            </div>
+            <div class="tab-pane fade" id="reportes" role="tabpanel" aria-labelledby="reportes-tab">
+                <h3>Reportes de Ventas</h3>
+                <form id="reporte-form">
+                    <div class="mb-3">
+                        <label for="fecha-inicio" class="form-label">Fecha de inicio</label>
+                        <input type="date" class="form-control" id="fecha-inicio" name="fecha_inicio" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha-fin" class="form-label">Fecha de fin</label>
+                        <input type="date" class="form-control" id="fecha-fin" name="fecha_fin" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generar Reporte</button>
+                </form>
+                <div id="reporte-resultado" class="mt-4">
+                    <!-- Aquí se mostrarán los resultados del reporte -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-light text-center py-4">
+        <p>&copy; 2024 FARMAX. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
