@@ -1,0 +1,92 @@
+<?php
+session_start();
+$is_admin = isset($_SESSION['Rol']) && $_SESSION['Rol'] == 'admin';
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Farmax - Inicio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<header>
+  <h1>Bienvenido a Farmax</h1>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#contacto">Contacto</a>
+  <a href="./productos.php">Catálogo de Productos</a>
+  <?php if (isset($_SESSION['Nombre'])): ?>
+    <?php if ($is_admin): ?>
+      <a href="./admin.php">Administración</a>
+    <?php endif; ?>
+    <a href="./logout.php">Cerrar Sesión</a>
+  <?php else: ?>
+    <a href="./login.php">Iniciar Sesión</a>
+  <?php endif; ?>
+</nav>
+
+
+<div class="alert alert-primary d-flex align-items-center p-4 mx-auto" role="alert">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </svg> 
+  <div>
+    ¡Recuerda Iniciar Sesión para disfrutar de tus compras!
+  </div>
+</div>
+
+<img src="./img/home.jpg" alt="Farmacia">
+
+<div class="container" id="home">
+  <h2>Tu farmacia de confianza</h2>
+  <p>En Farmax, nos dedicamos a ofrecerte los mejores productos farmacéuticos y un servicio de atención al cliente excepcional. 
+     Nuestro compromiso es cuidar de tu salud y bienestar con la mayor dedicación y profesionalismo. Trabajamos día a día para ofrecerte productos y servicios que mejoren tu calidad de vida. Visítanos en nuestra tienda física o en línea y descubre todo lo que tenemos para ofrecerte.</p>
+  <p><strong>¡Estamos aquí para ayudarte!</strong></p>
+
+  <h2>¿Por Qué Elegirnos?</h2>
+  <ul>
+    <li><strong>Experiencia y Profesionalismo:</strong> Contamos con años de experiencia en el sector farmacéutico, asegurando un servicio confiable y seguro.</li>
+    <li><strong>Precios Competitivos:</strong> Ofrecemos precios accesibles en todos nuestros productos, sin comprometer la calidad.</li>
+    <li><strong>Promociones y Descuentos:</strong> Aprovecha nuestras promociones y descuentos exclusivos para clientes habituales.</li>
+    <li><strong>Confidencialidad:</strong> Respetamos tu privacidad y mantenemos la confidencialidad de toda tu información médica.</li>
+  </ul>
+</div>
+
+<div class="container" id="contacto">
+  <h2>Contacto</h2>
+  <p>Puedes encontrarnos en nuestra dirección, llamarnos por teléfono o enviarnos un correo electrónico.</p>
+  <p>Dirección: Benito Juárez 1851, El Sabino, 67150 Guadalupe, N.L.</p>
+  <p>Teléfono: +123 456 7890</p>
+  <p>Email: contacto@farmax.com</p>
+</div>
+
+<div id="mapa" style="text-align: center;">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.874187970663!2d-100.22254912477214!3d25.67546497740616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662c0265aef375f%3A0xaf1ecdd1f61c6944!2sFarmax!5e0!3m2!1ses-419!2smx!4v1715919928783!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="alert alert-primary d-flex align-items-center p-4 mx-auto" role="alert">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </svg> 
+  <div>
+    ¡Recuerda Iniciar Sesión para disfrutar de tus compras!
+  </div>
+</div>
+
+<br>
+<br>
+<footer>
+  <p>&copy; 2024 Farmax. Todos los derechos reservados.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM
